@@ -61,7 +61,7 @@ Customer Menu
 2) Loop on menu:
    - 1 ; checking.start()
    - 2 ; savings.start()
-   - 3 ; prompt new PIN → setPIN(newPin)
+   - 3 ; prompt new PIN 
    - 0 ; exit
 
 Report (getReport()):  
