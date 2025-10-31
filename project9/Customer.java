@@ -1,24 +1,28 @@
+/* Customer.java
+    Used to manage a customers checking and savings accounts. 
+*/
+
 import java.util.Scanner;
 
-public class Customer extends User {
+public class Customer extends User { // customer class to manage accounts
     private CheckingAccount checking;
     private SavingsAccount savings;
 
     public static void main(String[] args) {
-        // Default test user
-        Customer c = new Customer("Alice", "0000");
+        // default test user
+        Customer c = new Customer("Alice", "1111");
         c.start();
     }
 
-    public Customer() {
-        this("Alice", "0000");
+    public Customer() { // default user
+        this("Alice", "1111");
     }
 
     public Customer(String userName, String PIN) {
         this.userName = userName;
         this.PIN = PIN;
         this.checking = new CheckingAccount(0.0d);
-        this.savings  = new SavingsAccount(0.0d, 0.01d); // default 1% for later
+        this.savings  = new SavingsAccount(0.0d, 0.01d); // 1% interest
     }
 
     public void start() {
@@ -43,13 +47,13 @@ public class Customer extends User {
     }
 
 
-    public String menu() {
+    public String menu() { // display menu and get choice
         System.out.print("\nAction (0-3): ");
         Scanner sc = new Scanner(System.in);
         return sc.nextLine().trim();
     }
 
-    public void changePIN() {
+    public void changePIN() { // change the users pin
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter new PIN: ");
         String np = sc.nextLine().trim();
@@ -57,7 +61,7 @@ public class Customer extends User {
         System.out.println("PIN changed.");
     }
 
-    public String getReport() {
+    public String getReport() { // get a report string
         return String.format(
             "Customer: %s | Checking: %s | Savings: %s",
             userName, checking.getBalanceString(), savings.getBalanceString()
