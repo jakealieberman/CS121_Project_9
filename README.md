@@ -14,43 +14,37 @@ Bank on it Part 1
 
 
 ## CheckingAccount
-* State: balance: double (default 0.0)
 * Public:
-  * CheckingAccount() ; CheckingAccount(double start)
-  * double getBalance() ; void setBalance(double)
-  * String getBalanceString() ; "$%.2f"
-  * void checkBalance() ; print balance
-  * void makeDeposit() ; balance += amount
-  * void makeWithdrawal() ; ask amount and balance -= amount, else say "Insufficient funds"
+  * CheckingAccount() 
+  * double getBalance() 
+  * String getBalanceString() 
+  * void checkBalance() 
+  * void makeDeposit() 
+  * void makeWithdrawal() 
 * String menu() ; 
   Account menu
   0) quit
   1) check balance
   2) deposit
   3) withdraw
-* void start() ; read choice; 0=quit, 1..3 call above
-
-Helper: private double getDouble(String prompt) ; read double or return 0.0
+* void start() ; read choice
 
 ## SavingsAccount (extends CheckingAccount)
-State: interestRate: double
 
 * Public:
-  * void setInterestRate(double r)
-  * double getInterestRate()`
-  * void calcInterest() ; setBalance(getBalance() + getBalance()*interestRate)`
+  * void setInterestRate
+  * double getInterestRate
+  * void calcInterest() 
 
 ## 4) User (abstract, implements HasMenu)
-* State: userName: String, PIN: String
 
 * Public:
-  * boolean login() ; ask for userName & PIN; return login(u,p)
-  * boolean login(String u, String p) ; compare to fields
+  * boolean login() 
+  * boolean login(String u, String p) 
   * getters/setters for userName, PIN
   * abstract String getReport()
 
 ## 5) Customer (extends User)
-* State: checking: CheckingAccount, savings: SavingsAccount
 
 * Constructors:
   * Default ; userName="Alice", PIN="0000", zeroed accounts
