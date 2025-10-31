@@ -48,7 +48,6 @@ Bank on it Part 1
 
 * Constructors:
   * Default ; userName="Alice", PIN="0000", zeroed accounts
-  * Param ; set given name/PIN
 
 * Menu (menu()):
 Customer Menu
